@@ -6,6 +6,7 @@ import axios from "axios"
 import { useCart } from "../context/CartContext"
 import { useAuth } from "../context/AuthContext"
 import OrderConfirmation from "../components/OrderConfirmation"
+import { API_BASE_URL } from "../config/api"
 
 const Checkout = () => {
   const { cart, clearCart } = useCart()
@@ -29,7 +30,6 @@ const Checkout = () => {
   const [orderDetails, setOrderDetails] = useState(null)
 
   const navigate = useNavigate()
-  const API_BASE_URL = "http://localhost:5000/api"
 
   useEffect(() => {
     if (cart.length === 0) {

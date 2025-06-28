@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
 import ProductCard from "../components/ProductCard"
+import { API_BASE_URL } from "../config/api"
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([])
@@ -14,7 +15,7 @@ const Products = () => {
   const [sortFilter, setSortFilter] = useState("")
 
   const location = useLocation()
-  const API_BASE_URL = "http://localhost:5000/api"
+  // const API_BASE_URL = "https://green-nest-backend.onrender.com/api"
 
   useEffect(() => {
     const loadProducts = async () => {

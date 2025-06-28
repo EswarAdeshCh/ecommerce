@@ -4,12 +4,11 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import ProductCard from "../components/ProductCard"
+import { API_BASE_URL } from "../config/api"
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([])
   const [loading, setLoading] = useState(true)
-
-  const API_BASE_URL = "http://localhost:5000/api"
 
   useEffect(() => {
     const loadFeaturedProducts = async () => {

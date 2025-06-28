@@ -4,14 +4,13 @@ import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useCart } from "../context/CartContext"
+import { API_BASE_URL } from "../config/api"
 
 const Cart = () => {
   const { cart, updateQuantity, removeFromCart } = useCart()
   const [cartProducts, setCartProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
-
-  const API_BASE_URL = "http://localhost:5000/api"
 
   useEffect(() => {
     const loadCartProducts = async () => {

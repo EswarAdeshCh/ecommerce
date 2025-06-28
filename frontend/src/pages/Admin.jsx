@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { useAuth } from "../context/AuthContext"
+import { API_BASE_URL } from "../config/api"
 
 const Admin = () => {
   const [currentTab, setCurrentTab] = useState("products")
@@ -19,7 +20,6 @@ const Admin = () => {
   })
 
   const { token } = useAuth()
-  const API_BASE_URL = "http://localhost:5000/api"
 
   useEffect(() => {
     if (currentTab === "products") {
